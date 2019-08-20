@@ -14,6 +14,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import java.util.List;
 
+//Daniel
+
 public class NoteActivity extends AppCompatActivity {
 
     public static final String NOTE_POSITION = "com.example.notekeeps.NOTE_POSITION";
