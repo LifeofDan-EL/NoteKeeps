@@ -4,7 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 /**
- * Created by Jim.
+ * Daniel Anomfueme
  */
 
 public final class NoteInfo implements Parcelable {
