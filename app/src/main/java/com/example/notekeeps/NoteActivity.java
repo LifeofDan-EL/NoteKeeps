@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
@@ -16,6 +17,7 @@ import java.util.List;
 //Daniel
 
 public class NoteActivity extends AppCompatActivity {
+    private final String TAG = getClass().getSimpleName();
 
     public static final String NOTE_POSITION = "com.example.notekeeps.NOTE_POSITION";
     public static final String ORIGINAL_NOTE_COURSE_ID = "com.example.notekeeps.ORIGINAL_NOTE_COURSE_ID";
@@ -62,8 +64,9 @@ public class NoteActivity extends AppCompatActivity {
         mTextNoteTitle =  findViewById(R.id.text_note_title);
         mTextNoteText = findViewById(R.id.text_note_text);
 
-        if (!mIsNewNote)
+        if (!mIsNewNote);
              displayNote(mSpinnerCourses, mTextNoteTitle, mTextNoteText);
+        Log.d(TAG, "On Create");
     }
 
     private void restoreOriginalNoteValues(Bundle savedInstanceState) {
@@ -95,6 +98,7 @@ public class NoteActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         if (mIsCancelling){
+            Log.i(TAG, "Cancelling Note at Position" + mNotePosition);
             if (mIsNewNote) {
                 DataManager.getInstance().removeNote(mNotePosition);
             } else{
@@ -103,6 +107,7 @@ public class NoteActivity extends AppCompatActivity {
         } else {
             saveNote();
         }
+        Log.d(TAG, "On Pause");
     }
 
     private void storePreviousNoteValues() {
@@ -133,7 +138,7 @@ public class NoteActivity extends AppCompatActivity {
         if (mIsNewNote) {
             createNewNote();
         }
-
+        Log.i(TAG, "mNotePosition: " + mNotePosition);
             mNote = DataManager.getInstance().getNotes().get(mNotePosition);
     }
 
@@ -141,7 +146,7 @@ public class NoteActivity extends AppCompatActivity {
         DataManager dm = DataManager.getInstance();
         mNotePosition = dm.createNewNote();
    //     mNote = dm.getNotes().get(mNotePosition);
-    }
+    } 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
