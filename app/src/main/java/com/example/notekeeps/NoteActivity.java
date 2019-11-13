@@ -145,7 +145,6 @@ public class NoteActivity extends AppCompatActivity {
     private void createNewNote() {
         DataManager dm = DataManager.getInstance();
         mNotePosition = dm.createNewNote();
-   //     mNote = dm.getNotes().get(mNotePosition);
     } 
 
     @Override
@@ -169,9 +168,22 @@ public class NoteActivity extends AppCompatActivity {
         } else if (id == R.id.action_cancel){
             mIsCancelling = true;
             finish();
+        } else if (id == R.id.action_next){
+            moveNext();
         }
 
+
         return super.onOptionsItemSelected(item);
+    }
+
+    private void moveNext() {
+        saveNote();
+
+        ++mNotePosition;
+        mNote = DataManager.getInstance().getNotes().get(mNotePosition);
+
+        saveOriginalNoteValues();
+        displayNote(mSpinnerCourses, mTextNoteTitle, mTextNoteText);
     }
 
     private void sendEmail() {
