@@ -39,12 +39,11 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginRight="8dp"
-                android:tint="#FFEB3B"
+                android:tint="@color/brightYellow"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/text_course"
-                app:srcCompat="@drawable/ic_menu_slideshow"
-                />
+                app:srcCompat="@drawable/ic_menu_slideshow" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

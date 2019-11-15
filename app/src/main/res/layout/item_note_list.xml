@@ -24,8 +24,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
-                android:tint="#FFEB3B"
+                android:tint="@color/brightYellow"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_assignment_black_24dp" />
 
