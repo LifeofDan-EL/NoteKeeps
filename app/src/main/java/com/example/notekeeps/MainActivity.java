@@ -82,6 +82,12 @@ public class MainActivity extends AppCompatActivity
         mNoteRecyclerAdapter.notifyDataSetChanged();
     }
 
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        return super.onOptionsItemSelected(item);
+    }
+
     private void initializeDisplayContent() {
         mRecyclerItems = findViewById(R.id.list_items);
         mNotesLayoutManager = new LinearLayoutManager(this);
