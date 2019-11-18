@@ -8,7 +8,7 @@
             android:title="Notes" />
         <item
             android:id="@+id/nav_courses"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_video_library_black_24dp"
             android:title="Courses" />
     </group>
 
