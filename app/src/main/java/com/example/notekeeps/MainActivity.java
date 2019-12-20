@@ -84,9 +84,15 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
 
-        return super.onOptionsItemSelected(item);
-    }
+        //no inspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+
+            startActivity(new Intent(this, SettingsActivity.class));
+        }
+            return super.onOptionsItemSelected(item);
+        }
 
     private void initializeDisplayContent() {
         mRecyclerItems = findViewById(R.id.list_items);
